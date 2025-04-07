@@ -29,7 +29,7 @@ if (args.length === 0) {
   process.exit(1);
 }
 
-const databaseUrl = args[0];
+const databaseUrl = args[0] ?? process.env.POSTRGRES_URL;
 
 const resourceBaseUrl = new URL(databaseUrl);
 resourceBaseUrl.protocol = "postgres:";
